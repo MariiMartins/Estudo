@@ -1,4 +1,3 @@
-# pycode
 Códigos Python de estudo
 
 ## Tipos de Dados
