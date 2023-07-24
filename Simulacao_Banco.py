@@ -39,6 +39,7 @@ def main():
         elif opcao == 4:
             salario = float(input("Digite sua renda: "))
             valor_liberado = salario * 35 / 100 * 12
+            print(f"Valor liberado: R$ {valor_liberado:.2f}")
 
             valor_solicitado = float(input("Digite o valor do empréstimo desejado: "))
             if valor_solicitado > valor_liberado:
@@ -58,13 +59,21 @@ def main():
                 else:
                     taxa_juros = 9
 
-                valor_final = valor_solicitado * (1 + taxa_juros / 100) / parcelas
+                valor_final = valor_solicitado * (1 + taxa_juros / 100)
+                valor_parcela = valor_final / parcelas
 
+                print(f"Valor total do empréstimo (com juros): R$ {valor_final:.2f}")
                 print(f"Taxa de Juros: {taxa_juros:.2f} %")
-                print(f"{parcelas} parcelas mensais de: R$ {valor_final:.2f}")
+                print(f"{parcelas} parcelas mensais de: R$ {valor_parcela:.2f}")
+        
         else:
             print("Opção inválida. Tente novamente.")
+
+        fazer_outra_operacao = input("Deseja fazer outra operação? (S/N): ").upper()
+        if fazer_outra_operacao != "S":
+            break
 
 
 if __name__ == "__main__":
     main()
+    
